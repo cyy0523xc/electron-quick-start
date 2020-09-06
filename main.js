@@ -17,6 +17,29 @@ function createWindow () {
   // 隐藏菜单栏
   mainWindow.setMenu(null)
 
+  // 解决alert后失去焦点的问题
+  const isWindows = process.platform == 'win32';
+  let needsFocusFix = false;
+  let triggeringProgrammaticBlur = false;
+  mainWindow.on('blur', (event) => {
+    if (!triggeringProgrammaticBlur) {
+      needsFocusFix = true;
+    }
+  })
+  mainWindow.on('focus', (event) => {
+    if (isWindows && needsFocusFix) {
+      needsFocusFix = false;
+      triggeringProgrammaticBlur = true;
+      setTimeout(function () {
+        mainWindow.blur();
+        mainWindow.focus();
+        setTimeout(function () {
+          triggeringProgrammaticBlur = false;
+        }, 100);
+      }, 100);
+    }
+  })
+
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 }
@@ -26,7 +49,7 @@ function createWindow () {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   createWindow()
-  
+
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
