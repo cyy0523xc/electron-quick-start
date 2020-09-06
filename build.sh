@@ -1,0 +1,1 @@
+electron-packager . --overwrite --icon=logo.ico

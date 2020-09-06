@@ -1,18 +1,17 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "speed-predict",
+  "version": "1.0.2",
+  "description": "输入宽度厚度等，计算速度: cyy0523xc@qq.com",
   "main": "main.js",
+  "win": {
+    "icon": "logo.ico"
+  },
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "Electron"
   ],
   "author": "GitHub",
   "license": "CC0-1.0",
