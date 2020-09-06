@@ -12,49 +12,57 @@
       padding-left: 50px;
     }
     </style>
-  </head>
-  <body>
-    <h1>速度预测</h1>
+    </head>
+    
+    <body>
+      <h1>速度预测</h1>
 
-    <h2>输入数据</h2>
-    <div class="input">
-      <div>
-        <span class="field-title">材料: </span>
-        <span>
-          <select id="material-param">
-            <option value="1">低碳刚</option>
-            <option value="2">高碳刚</option>
-          </select>
-        </span>
+      <div class="main">
+        <h2>输入数据</h2>
+        <div class="input">
+          <div>
+            <span class="field-title">材料: </span>
+            <span>
+              <select id="material-param">
+                <option value="1">低碳刚</option>
+                <option value="2">高碳刚</option>
+              </select>
+            </span>
+          </div>
+          <div>
+            <span class="field-title">宽度: </span>
+            <span><input type="text" id="width-param" />毫米</span>
+          </div>
+          <div>
+            <span class="field-title"></span>厚度: </span>
+            <span><input type="text" id="thickness-param" />毫米</span>
+          </div>
+          <div>
+            <span class="field-title">破鳞系数: </span>
+            <span><input type="text" id="coef-param" /></span>
+          </div>
+          <div class="button"><input type="button" id="submit" value="点击预测" /></div>
+        </div> <!-- end of input-->
+    
+        <h2>预测结果</h2>
+        <div class="output">
+          <div>
+            <span class="field-title">未破鳞速速: </span>
+            <span id="speed-out"></span>
+          </div>
+          <div>
+            <span class="field-title">破鳞速速: </span>
+            <span id="speed-coef-out"></span>
+          </div>
+        </div> <!-- end of output -->
+    
       </div>
-      <div>
-        <span class="field-title">宽度: </span>
-        <span><input type="text" id="width-param" />毫米</span>
-      </div>
-      <div>
-        <span class="field-title"></span>厚度: </span>
-        <span><input type="text" id="thickness-param" />毫米</span>
-      </div>
-      <div>
-        <span class="field-title">破鳞系数: </span>
-        <span><input type="text" id="coef-param" /></span>
-      </div>
-      <div class="button"><input type="button" id="submit" value="点击预测" /></div>
-    </div> <!-- end of input-->
-
-    <h2>预测结果</h2>
-    <div class="output">
-      <div>
-        <span class="field-title">未破鳞速速: </span>
-        <span id="speed-out"></span>
-      </div>
-      <div>
-        <span class="field-title">破鳞速速: </span>
-        <span id="speed-coef-out"></span>
-      </div>
-    </div> <!-- end of output -->
-
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
-  </body>
-</html>
+    
+      <div style="height: 100px;"><br /><br /><br /></div>
+      <footer>Power By cyy0523xc@qq.com</footer>
+    
+      <!-- You can also require other files to run in this process -->
+      <script src="./renderer.js"></script>
+    </body>
+    
+    </html>
